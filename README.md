@@ -72,7 +72,18 @@
 - State table
 
 $$
-\begin{tabular}[h]{c:cc:c:ccccccc}Current State & sel & write & Next State & cs & we & ras & cas & bank\_select & dram\_addr & ready \\ \hline IDLE & 1 & 1 & READ\_ACT & x & x & x & x & x & x & 0 \\ READ\_ACT & x & x & READ\_NOP0 & 0 & 1 & 0 & 1 & bank\# & row\_address & 0 \\ READ\_NOP0 & x & x & READ\_CAS & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\ READ\_CAS & x & x & READ\_NOP1 & 0 & 1 & 1 & 0 & bank\# & column\_address & 0 \\ READ\_NOP1 & x & x & READ\_NOP2 & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\ READ\_NOP2 & x & x & IDLE & 1 & 1 & 1 & 1 & 'd0 & 'd0 & 1 \\ \end{tabular}
+\[
+\begin{array}{c|cc|c|ccccccc}
+    \text{Current State} & \text{sel} & \text{write} & \text{Next State} & \text{cs} & \text{we} & \text{ras} & \text{cas} & \text{bank\_select} & \text{dram\_addr} & \text{ready} \\
+    \hline
+    \text{IDLE} & 1 & 1 & \text{READ\_ACT} & x & x & x & x & x & x & 0 \\
+    \text{READ\_ACT} & x & x & \text{READ\_NOP0} & 0 & 1 & 0 & 1 & \text{bank\#} & \text{row\_address} & 0 \\
+    \text{READ\_NOP0} & x & x & \text{READ\_CAS} & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\
+    \text{READ\_CAS} & x & x & \text{READ\_NOP1} & 0 & 1 & 1 & 0 & \text{bank\#} & \text{column\_address} & 0 \\
+    \text{READ\_NOP1} & x & x & \text{READ\_NOP2} & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\
+    \text{READ\_NOP2} & x & x & \text{IDLE} & 1 & 1 & 1 & 1 & 'd0 & 'd0 & 1
+\end{array}
+\]
 $$
 
 ## Write Operation
@@ -86,7 +97,18 @@ $$
 | WRITE_NOP2 | Send ready signal outside of the DRAM chip, and close row and bit lines. |
 
 $$
-\begin{tabular}[h]{c:cc:c:ccccccc}Current State & sel & write & Next State & cs & we & ras & cas & bank\_select & dram\_addr & ready \\ \hline IDLE & 1 & 0 & WRITE\_ACT & x & x & x & x & x & x & 0 \\ WRITE\_ACT & x & x & WRITE\_NOP0 & 0 & 1 & 0 & 1 & bank\# & row\_address & 0 \\ WRITE\_NOP0 & x & x & WRITE\_CAS & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\ WRITE\_CAS & x & x & WRITE\_NOP1 & 0 & 0 & 1 & 0 & bank\# & column\_address & 0 \\ WRITE\_NOP1 & x & x & WRITE\_NOP2 & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\ WRITE\_NOP2 & x & x & IDLE & 1 & 1 & 1 & 1 & 'd0 & 'd0 & 1 \\ \end{tabular}
+\[
+\begin{array}{c|cc|c|ccccccc}
+    \text{Current State} & \text{sel} & \text{write} & \text{Next State} & \text{cs} & \text{we} & \text{ras} & \text{cas} & \text{bank\_select} & \text{dram\_addr} & \text{ready} \\
+    \hline
+    \text{IDLE} & 1 & 0 & \text{WRITE\_ACT} & x & x & x & x & x & x & 0 \\
+    \text{WRITE\_ACT} & x & x & \text{WRITE\_NOP0} & 0 & 1 & 0 & 1 & \text{bank\#} & \text{row\_address} & 0 \\
+    \text{WRITE\_NOP0} & x & x & \text{WRITE\_CAS} & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\
+    \text{WRITE\_CAS} & x & x & \text{WRITE\_NOP1} & 0 & 0 & 1 & 0 & \text{bank\#} & \text{column\_address} & 0 \\
+    \text{WRITE\_NOP1} & x & x & \text{WRITE\_NOP2} & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\
+    \text{WRITE\_NOP2} & x & x & \text{IDLE} & 1 & 1 & 1 & 1 & 'd0 & 'd0 & 1
+\end{array}
+\]
 $$
 
 # Testbench result screenshot
