@@ -22,7 +22,7 @@
 
 | Items | memory mapped I/O [31:30] | invalid bits [29:25] | column address [24:16] | bank selelction [15:14] | row address [13:0] |
 | --- | --- | --- | --- | --- | --- |
-| Description | the value of these bits is 10 in here simulation. See further details about MMIO at Appendix A. MMIO. | unused bits, these bits can be used if more elements (chip, bank, row, column) is needed. | address of a column in a bank | index of a bank to read or write | address of a row in a bank |
+| Description | the value of these bits is 10 for DRAM in this project. See further details about MMIO at Appendix A. MMIO. | unused bits, these bits can be used if more elements (chip, bank, row, column) is needed. | address of a column in a bank | index of a bank to read or write | address of a row in a bank |
 
 ### Outputs
 
@@ -112,3 +112,8 @@ $$
 # Appendix
 
 ## Appendix A. Memory Mapped I/O (MMIO)
+Memory-mapped I/O is a method of performing input/output between the CPU and peripheral devices in a computer. MMIO uses the same address space to address both main memory and I/O devices.
+
+To map DRAM chip in the form of MMIO, two bits are reserved to accomodate memory devices, in this project. In real logic design, more perpheral devices you use, more bits you need to reserve.
+
+[Source: [Memory-mapped I/O and port-mapped I/O - Wikipedia](https://en.wikipedia.org/wiki/Memory-mapped_I/O_and_port-mapped_I/O)]
