@@ -53,7 +53,7 @@
 
 ## State diagram
 
-![state_diagram_png](/images/state_diagram_png)
+![state_diagram_png](/images/state_diagram.png)
 
 ## Read operation
 
@@ -66,9 +66,10 @@
 | READ_CAS | Send column address to sense amplifier MUX to store the output to the data buffer. |
 | READ_NOP1 | Wait a single cycle to amplify charges in bit lines and cells by sense amplifiers |
 | READ_NOP2 | Send the output and ready signal outside of the DRAM chip. |
-
 - State table
+
 $$
+\[
 \begin{array}{c|cc|c|ccccccc}
     \text{Current State} & \text{sel} & \text{write} & \text{Next State} & \text{cs} & \text{we} & \text{ras} & \text{cas} & \text{bank\_select} & \text{dram\_addr} & \text{ready} \\
     \hline
@@ -79,6 +80,7 @@ $$
     \text{READ\_NOP1} & x & x & \text{READ\_NOP2} & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\
     \text{READ\_NOP2} & x & x & \text{IDLE} & 1 & 1 & 1 & 1 & 'd0 & 'd0 & 1
 \end{array}
+\]
 $$
 
 ## Write Operation
@@ -90,9 +92,10 @@ $$
 | WRITE_CAS | Send column address to sense amplifier DeMUX and load input from the data buffer. |
 | WRITE_NOP1 | Wait a single cycle to amplify charges in bit lines and cells by sense amplifiers |
 | WRITE_NOP2 | Send ready signal outside of the DRAM chip, and close row and bit lines. |
-
 - State table
+
 $$
+\[
 \begin{array}{c|cc|c|ccccccc}
     \text{Current State} & \text{sel} & \text{write} & \text{Next State} & \text{cs} & \text{we} & \text{ras} & \text{cas} & \text{bank\_select} & \text{dram\_addr} & \text{ready} \\
     \hline
@@ -103,6 +106,7 @@ $$
     \text{WRITE\_NOP1} & x & x & \text{WRITE\_NOP2} & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\
     \text{WRITE\_NOP2} & x & x & \text{IDLE} & 1 & 1 & 1 & 1 & 'd0 & 'd0 & 1
 \end{array}
+\]
 $$
 
 # Testbench result screenshot
