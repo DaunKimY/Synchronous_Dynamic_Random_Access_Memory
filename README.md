@@ -71,7 +71,7 @@
 | READ_NOP2 | Send the output and ready signal outside of the DRAM chip. |
 
 - State table
-$$
+\[
 \begin{array}{c|cc|c|ccccccc}
     \text{Current State} & \text{sel} & \text{write} & \text{Next State} & \text{cs} & \text{we} & \text{ras} & \text{cas} & \text{bank\_select} & \text{dram\_addr} & \text{ready} \\
     \hline
@@ -82,6 +82,7 @@ $$
     \text{READ\_NOP1} & x & x & \text{READ\_NOP2} & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\
     \text{READ\_NOP2} & x & x & \text{IDLE} & 1 & 1 & 1 & 1 & 'd0 & 'd0 & 1
 \end{array}
+\]
 $$
 
 ## Write Operation
@@ -96,6 +97,7 @@ $$
 
 - State table
 $$
+\[
 \begin{array}{c|cc|c|ccccccc}
     \text{Current State} & \text{sel} & \text{write} & \text{Next State} & \text{cs} & \text{we} & \text{ras} & \text{cas} & \text{bank\_select} & \text{dram\_addr} & \text{ready} \\
     \hline
@@ -106,6 +108,7 @@ $$
     \text{WRITE\_NOP1} & x & x & \text{WRITE\_NOP2} & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\
     \text{WRITE\_NOP2} & x & x & \text{IDLE} & 1 & 1 & 1 & 1 & 'd0 & 'd0 & 1
 \end{array}
+\]
 $$
 
 # Testbench result screenshot
