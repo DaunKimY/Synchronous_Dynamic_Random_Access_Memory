@@ -9,9 +9,9 @@ module sdram_controller(
     input [31:0] in_data,   // data input
     input [31:0] addr,      // address input for read or write
     /* address mapping
-    memory_mapped_I/O[31:30] == 10 | invalid[29:25] | column_address[24:16] | bank_selection[15:14] | row_address[13:0]
+    memory_mapped_I/O[31:30] | invalid[29:25] | column_address[24:16] | bank_selection[15:14] | row_address[13:0]
     
-    memory_mapped_I/O : 
+    memory_mapped_I/O : bits indicating which peripheral device is going to be used. For DRAM in this simulation, it's value is 10.
     invalid : unused bits, these bits can be used if more elements (chip, bank, row, column) is needed.
     column_address : address of a column in a bank
     bank_selection : index of a bank to read or write
