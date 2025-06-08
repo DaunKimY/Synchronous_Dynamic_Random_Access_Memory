@@ -1,0 +1,19 @@
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+#         0 / Write operation / Bank#: 0 / Row:     0 / Column:   1
+#         1 / Write operation / Bank#: 1 / Row:     1 / Column:   0
+#         2 / Write operation / Bank#: 2 / Row:     0 / Column:   1
+#         3 / Write operation / Bank#: 3 / Row:     1 / Column:   0
+#         4 / Write operation / Bank#: 2 / Row:     1 / Column:   0
+#         5 / Write operation / Bank#: 3 / Row:     0 / Column:   1
+#         6 / Write operation / Bank#: 1 / Row:     0 / Column:   1
+#         7 / Write operation / Bank#: 0 / Row:     1 / Column:   0
+#         8 / Read operation / Bank#: 0 / Row:     0 / Column:   1
+#         9 / Read operation / Bank#: 1 / Row:     1 / Column:   0
+#        10 / Read operation / Bank#: 2 / Row:     0 / Column:   1
+#        11 / Read operation / Bank#: 3 / Row:     1 / Column:   0
+#        12 / Read operation / Bank#: 2 / Row:     1 / Column:   0
+#        13 / Read operation / Bank#: 3 / Row:     0 / Column:   1
+#        14 / Read operation / Bank#: 1 / Row:     0 / Column:   1
+#        15 / Read operation / Bank#: 0 / Row:     1 / Column:   0
+$finish called at time : 2440 ns : File "D:/Vivado/SDRAM/sources/testbench/tb.v" Line 71

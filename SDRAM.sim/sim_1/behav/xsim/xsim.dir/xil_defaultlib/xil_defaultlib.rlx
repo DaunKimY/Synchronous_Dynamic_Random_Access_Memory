@@ -1,0 +1,9 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+D:/Vivado/SDRAM/SDRAM.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,,,,,,,
+D:/Vivado/SDRAM/sources/modules/sdram_controller.v,1749359916,verilog,,D:/Vivado/SDRAM/sources/modules/sdram_model.v,,sdram_controller,,,,,,,,
+D:/Vivado/SDRAM/sources/modules/sdram_model.v,1749287338,verilog,,D:/Vivado/SDRAM/sources/modules/sdram_top.v,,sdram_model,,,,,,,,
+D:/Vivado/SDRAM/sources/modules/sdram_top.v,1749094923,verilog,,D:/Vivado/SDRAM/sources/testbench/tb.v,,sdram_top,,,,,,,,
+D:/Vivado/SDRAM/sources/testbench/tb.v,1749114041,verilog,,,,tb,,,,,,,,
