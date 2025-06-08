@@ -72,7 +72,7 @@
 - State table
 
 $$
-\scriptsize \begin{array}{c:cc:c:ccccccc}Current State & sel & write & Next State & cs & we & ras & cas & bank\_select & dram\_addr & ready \\ \hline IDLE & 1 & 1 & READ\_ACT & x & x & x & x & x & x & 0 \\ READ\_ACT & x & x & READ\_NOP0 & 0 & 1 & 0 & 1 & bank\# & row\_address & 0 \\ READ\_NOP0 & x & x & READ\_CAS & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\ READ\_CAS & x & x & READ\_NOP1 & 0 & 1 & 1 & 0 & bank\# & column\_address & 0 \\ READ\_NOP1 & x & x & READ\_NOP2 & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\ READ\_NOP2 & x & x & IDLE & 1 & 1 & 1 & 1 & 'd0 & 'd0 & 1 \\\end{array}
+\scriptsize \begin{tabular}{c:cc:c:ccccccc}Current State & sel & write & Next State & cs & we & ras & cas & bank\_select & dram\_addr & ready \\ \hline IDLE & 1 & 1 & READ\_ACT & x & x & x & x & x & x & 0 \\ READ\_ACT & x & x & READ\_NOP0 & 0 & 1 & 0 & 1 & bank\# & row\_address & 0 \\ READ\_NOP0 & x & x & READ\_CAS & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\ READ\_CAS & x & x & READ\_NOP1 & 0 & 1 & 1 & 0 & bank\# & column\_address & 0 \\ READ\_NOP1 & x & x & READ\_NOP2 & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\ READ\_NOP2 & x & x & IDLE & 1 & 1 & 1 & 1 & 'd0 & 'd0 & 1 \\\end{tabular}
 $$
 
 ## Write Operation
@@ -86,7 +86,7 @@ $$
 | WRITE_NOP2 | Send ready signal outside of the DRAM chip, and close row and bit lines. |
 
 $$
-\scriptsize \begin{array}{c:cc:c:ccccccc}Current State & sel & write & Next State & cs & we & ras & cas & bank\_select & dram\_addr & ready \\ \hline IDLE & 1 & 0 & WRITE\_ACT & x & x & x & x & x & x & 0 \\ WRITE\_ACT & x & x & WRITE\_NOP0 & 0 & 1 & 0 & 1 & bank\# & row\_address & 0 \\ WRITE\_NOP0 & x & x & WRITE\_CAS & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\ WRITE\_CAS & x & x & WRITE\_NOP1 & 0 & 0 & 1 & 0 & bank\# & column\_address & 0 \\ WRITE\_NOP1 & x & x & WRITE\_NOP2 & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\ WRITE\_NOP2 & x & x & IDLE & 1 & 1 & 1 & 1 & 'd0 & 'd0 & 1 \\\end{array}
+\scriptsize \begin{tabular}{c:cc:c:ccccccc}Current State & sel & write & Next State & cs & we & ras & cas & bank\_select & dram\_addr & ready \\ \hline IDLE & 1 & 0 & WRITE\_ACT & x & x & x & x & x & x & 0 \\ WRITE\_ACT & x & x & WRITE\_NOP0 & 0 & 1 & 0 & 1 & bank\# & row\_address & 0 \\ WRITE\_NOP0 & x & x & WRITE\_CAS & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\ WRITE\_CAS & x & x & WRITE\_NOP1 & 0 & 0 & 1 & 0 & bank\# & column\_address & 0 \\ WRITE\_NOP1 & x & x & WRITE\_NOP2 & 0 & 1 & 1 & 1 & 'd0 & 'd0 & 0 \\ WRITE\_NOP2 & x & x & IDLE & 1 & 1 & 1 & 1 & 'd0 & 'd0 & 1 \\\end{tabular}
 $$
 
 # Testbench result screenshot
